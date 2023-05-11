@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *
+        {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        h1{
+            position: absolute;
+            padding-left: 650px;
+            padding-top: 100px;
+           
+        }
+        .a
+        {
+            height:100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+         
+        }
+        .b
+        {
+            padding:15px;
+            border-radius: 30px;
+            display: grid;
+            grid-template-columns: repeat(4,70px);
+            background-color: rgb(222, 216, 190);
+        }
+        input
+        {
+            grid-column: span 4;
+            height: 30px;
+            width:100%;
+            text-align: right;
+            font-size: 20px;
+            border-radius: 5px;
+            padding: 15px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+        button{
+            height:40px;
+            width:50px;
+            background-color: aliceblue;
+            border: none;
+            border-radius: 40%;
+            margin:10px;
+            justify-content: space-between;
+            padding: 7px;
+            font-size: 18px;
+            color: black;
+        }
+        button:hover{
+            cursor: pointer;
+            background-color: rgb(136, 172, 204);
+            
+        }
+       
+    </style>
+</head>
+<body>
+    <center>  <h1>CALCULATOR</h1></center>
+<div class="a" >
+    
+    <div class="b">
+       
+        <input type="text" placeholder="0" id="d">
+        <button onclick="cl()">clear</button>
+        <button onclick="del()">Del</button>
+        <button onclick="display('%')">%</button>
+        <button onclick="display('/')">/</button>
+        <button onclick="display('7')">7</button>
+        <button onclick="display('8')">8</button>
+        <button onclick="display('9')">9</button>
+        <button onclick="display('*')">*</button>
+        <button onclick="display('4')">4</button>
+         <button onclick="display('5')">5</button>
+         <button onclick="display('6')">6</button>
+         <button onclick="display('-')">-</button>
+         <button onclick="display('1')">1</button>
+         <button onclick="display('2')">2</button>
+         <button onclick="display('3')">3</button>
+         <button onclick="display('+')">+</button>
+         <button onclick="display('.')">.</button>
+         <button onclick="display('0')">0</button>
+         <button onclick="cal()" class="c">=</button>
+
+    </div>
+</div>
+<script>
+    let v=document.getElementById("d");
+    function display(n)
+    {
+        v.value+=n;
+    }
+    function cal(){
+        try{
+            v.value=eval(v.value);
+        }
+        catch(err)
+        {
+            alert("please check ur input");
+        }
+    }
+    function cl()
+    {
+        v.value= "";
+    }
+    function del()
+    {
+        v.value=v.value.slice(0,-1);
+    }
+</script>
+</body>
+</html>
